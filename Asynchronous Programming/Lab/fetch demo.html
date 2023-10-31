@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="load">Load Repos</button>
+    <div id="res"> </div>
+    <script>
+         const button = document.querySelector('#load');
+         button.addEventListener('click', loadRepos);
+         
+      
+
+         function loadRepos(){
+            const url = 'http://api.github.com/users/testnakov/repos';
+            fetch(url)
+                 .then((response) => response.json())
+                 .then((data) => document.getElementById('res').textContent = JSON.stringify(data))
+
+         }
+    </script>
+</body>
+</html>

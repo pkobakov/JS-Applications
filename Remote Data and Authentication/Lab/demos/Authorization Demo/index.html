@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            font-family: 'Arial Narrow', Arial, sans-serif;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        button{
+            color: white;
+            background-color: teal;
+            padding: 5px;
+            border-color: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <button id="load-data-btn">Load data</button>
+    <form id="register-form">
+        <h2>Register User</h2>
+       <label>Email <input type="text" name="email"></label>
+       <label>Password <input type="password" name="password"></label>
+       <label>Confirm Password <input type="password" name="confirm"></label>
+       <button>Sign Up</button>
+    </form>
+    <script src="/app.js"></script>
+</body>
+</html>

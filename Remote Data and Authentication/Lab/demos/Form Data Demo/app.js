@@ -45,7 +45,7 @@ async function postData(event){
 
     loadData();
 
-    event.target.reset();
+    event.target.reset();  
 
 }
 

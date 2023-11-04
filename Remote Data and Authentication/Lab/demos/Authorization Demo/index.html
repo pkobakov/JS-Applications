@@ -17,8 +17,16 @@
             color: white;
             background-color: teal;
             padding: 5px;
-            border-color: none;
+            border-style: none;
             border-radius: 6px;
+        }
+
+        #load-data-btn{
+            background-color: darkorange;
+        }
+
+        #login-btn{
+            background-color: green;
         }
     </style>
 </head>
@@ -30,6 +38,13 @@
        <label>Password <input type="password" name="password"></label>
        <label>Confirm Password <input type="password" name="confirm"></label>
        <button>Sign Up</button>
+    </form>
+
+    <form id="login-form">
+        <h2>Login User</h2>
+       <label>Email <input type="text" name="email"></label>
+       <label>Password <input type="password" name="password"></label>
+       <button id="login-btn">Sign in</button>
     </form>
     <script src="/app.js"></script>
 </body>

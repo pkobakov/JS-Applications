@@ -3,6 +3,8 @@ document.getElementById('register-form').addEventListener('submit', onRegister);
 document.getElementById('login-form').addEventListener('submit', onLogin);
 document.getElementById('load-data-btn').addEventListener('click', loadData);
 
+const recipes = document.querySelector('#recipes-list');
+
 
 async function onRegister(event){
     event.preventDefault();
@@ -97,8 +99,16 @@ async function loadData(){
             throw error;
         }
         const data = await response.json();
-        
+
+        Object.entries(data).map(entry => {
+
+            const listItem = document.createElement('li');
+            listItem.textContent  = entry[1].name;
+            recipes.appendChild(listItem);
+        }); 
+
         console.log(data);
+
     } catch (error) {
         
     }

@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Authentication Demo </title>
     <style>
         form{
             font-family: 'Arial Narrow', Arial, sans-serif;
@@ -32,6 +32,9 @@
 </head>
 <body>
     <button id="load-data-btn">Load data</button>
+    <section id="recipes">
+        <ul id="recipes-list"></ul>
+    </section>
     <form id="register-form">
         <h2>Register User</h2>
        <label>Email <input type="text" name="email"></label>
@@ -46,6 +49,6 @@
        <label>Password <input type="password" name="password"></label>
        <button id="login-btn">Sign in</button>
     </form>
-    <script src="/app.js"></script>
+    <script src="./app.js"></script>
 </body>
 </html>

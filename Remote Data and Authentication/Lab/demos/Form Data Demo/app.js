@@ -1,8 +1,9 @@
 start();
 
 function start(){
+
      document.getElementById('editor-create').addEventListener('submit', postData);
-     document.getElementById('load').addEventListener('click', loadData);
+     document.getElementById('load-btn').addEventListener('click', loadData);
      document.getElementById('save-btn').addEventListener('click', savePart);
      document.getElementById('table-body').addEventListener('click', tableAction);
      document.getElementById('cancel-btn').addEventListener('click', toggleEditors)
@@ -92,8 +93,8 @@ function createRow(record){
        ${record.qty}
     </td>
     <td>
-        <button data-id="${record._id}" class="delete-btn">Delete</button>
-        <button data-id="${record._id}" class="edit-btn">Edit</button>
+        <button data-id="${record._id}" class="delete-btn" style="border-style: none; background-color: red; color:white;">Delete</button>
+        <button data-id="${record._id}" class="edit-btn" style="border-style: none; background-color: brown; color:white;">Edit</button>
 
     </td>`
 

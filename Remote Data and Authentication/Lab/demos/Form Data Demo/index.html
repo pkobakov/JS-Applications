@@ -2,27 +2,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Demo</title>
+    <title>Form Data Demo</title>
     <style>
+        body{
+            font-family:'Arial Narrow', Arial, sans-serif;
+        }
         table, tr, th, td {
             border-collapse: collapse;
             border: 1px solid black;
             text-align: center;
         }
 
+        th{
+            background-color: rgb(77, 118, 15);
+            color: white;
+        }
+
         td,th {
             padding: 4px 8px;
         }
 
+        .input-field{
+            margin-bottom: 10px;
+        }
+
         #editor-edit{
            display: none; 
+        }
+
+        button {
+            border-style: none;
+            border-radius: 3px;
+            padding: 5px;
+        }
+        
+        #load-btn{
+            margin-bottom: 10px;
+            background-color: darkblue;
+            color: white;
+        }
+
+        .create-btn{
+            background-color: crimson;
+            color: white;
+        }
+
+        #save-btn {
+            background-color: darkslategray;
+            color: white;
+        }
+
+        #cancel-btn {
+            background-color: rgb(71, 31, 2);
+            color:white;
         }
     </style>
 </head>
 <body>
     <section id="index">
         <h2>Part Index</h2>
-        <button id="load">Load Database</button>
+        <button id="load-btn">Load Database</button>
         <table>
             <thead>
                 <tr>
@@ -39,21 +78,21 @@
     </section>
     <form id="editor-create">
         <h2>New Part</h2>
-        <div>
+        <div class="input-field">
             <span>Label</span>
             <input type="text" name="label">
         </div>
-        <div>
+        <div class="input-field">
             <span>Unit Price</span>
             <input type="number" name="price">
         </div>
-        <div>
+        <div class="input-field">
             <span>Quantity</span>
             <input type="number" name="qty">
         </div>
         <div>
             <!-- <input type="submit" value="Create Part"> -->
-            <button>Create Part</button>
+            <button class="create-btn">Create Part</button>
         </div>
     </form>
     <section id="editor-edit">

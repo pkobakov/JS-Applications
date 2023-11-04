@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Demo</title>
+    <style>
+        table, tr, th, td {
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        td,th {
+            padding: 4px 8px;
+        }
+
+        #editor-edit{
+           display: none; 
+        }
+    </style>
+</head>
+<body>
+    <section id="index">
+        <h2>Part Index</h2>
+        <button id="load">Load Database</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Part Id</th>
+                    <th>Label</th>
+                    <th>Price</th>
+                    <th>Available Quantity</th>
+                    <th>Control</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </section>
+    <form id="editor-create">
+        <h2>New Part</h2>
+        <div>
+            <span>Label</span>
+            <input type="text" name="label">
+        </div>
+        <div>
+            <span>Unit Price</span>
+            <input type="number" name="price">
+        </div>
+        <div>
+            <span>Quantity</span>
+            <input type="number" name="qty">
+        </div>
+        <div>
+            <!-- <input type="submit" value="Create Part"> -->
+            <button>Create Part</button>
+        </div>
+    </form>
+    <section id="editor-edit">
+        <h2>Edit Part</h2>
+        <input type="hidden" id="edit-id">
+        <div>
+            <span>Label</span>
+            <input type="text" id="edit-label">
+        </div>
+        <div>
+            <span>Unit Price</span>
+            <input type="number" id="edit-price">
+        </div>
+        <div>
+            <span>Quantity</span>
+            <input type="number" id="edit-qty">
+        </div>
+        <div>
+            <button id="save-btn">Save</button>
+            <button id="cancel-btn">Cancel</button>
+        </div>
+    </section>
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -9,6 +9,11 @@
             display: none;
         }
     </style> -->
+    <style>
+        #views{
+            display: none;
+        }
+    </style>
     <title>Car Shop</title>
 </head>
 <body>
@@ -20,22 +25,24 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a id="home-link" class="nav-link" aria-current="page" href="#">Home</a>
-              <a id="catalog-link" class="nav-link" href="#">Catalog</a>
-              <a id="login-link" class="nav-link" href="#">Login</a>
+              <a id="home-link" class="nav-link" aria-current="page" href="javascript: void(0)">Home</a>
+              <a id="catalog-link" class="nav-link" href="javascript: void(0)">Catalog</a>
+              <a id="login-link" class="nav-link" href="javascript: void(0)">Login</a>
             </div>
           </div>
         </div>
       </nav>
     <main id="main"></main>
-    <section id="home">
-        <h3 class="display-3">Welcome to our site</h3>
-    </section>
-    <section id="catalog">
-        <h3 class="display-3">Catalog</h3>
-    </section>
-    <section id="login">
-        <h3 class="display-3">Sign In</h3>
-    </section>
+    <div id="views">
+        <section id="home">
+            <h3 class="display-3">Welcome to our site</h3>
+        </section>
+        <section id="catalog">
+            <h3 class="display-3">Catalog</h3>
+        </section>
+        <section id="login">
+            <h3 class="display-3">Sign In</h3>
+        </section>
+    </div>
 </body>
 </html>

@@ -16,28 +16,43 @@
 // })
 //---------------------------------------------------------------------------------
 // Manipulate the DOM
-const main = document.getElementById('main');
-const views = {
-    home : document.getElementById('home'),
-    catalog: document.getElementById('catalog'),
-    login: document.getElementById('login')
-};
+// const main = document.getElementById('main');
+// const views = {
+//     home : document.getElementById('home'),
+//     catalog: document.getElementById('catalog'),
+//     login: document.getElementById('login')
+// };
 
-Object.values(views).forEach(v => v.remove());
+// Object.values(views).forEach(v => v.remove());
 
-main.replaceChildren(views.home);
+// main.replaceChildren(views.home);
+
+// document.getElementById('home-link').addEventListener('click', ()=>{
+//     main.replaceChildren(views.home)
+// });
+
+// document.getElementById('catalog-link').addEventListener('click', ()=>{
+//     main.replaceChildren(views.catalog)
+// });
+
+// document.getElementById('login-link').addEventListener('click', ()=>{
+//     main.replaceChildren(views.login)
+// });
+
+import { showHome } from "./home.js";
+import { showCatalog } from "./catalog.js";
+import { showLogin } from "./login.js";
+
+document.getElementById('views').remove();
 
 document.getElementById('home-link').addEventListener('click', ()=>{
-    main.replaceChildren(views.home)
-});
+    showHome();
+})
 
-document.getElementById('catalog-link').addEventListener('click', ()=>{
-    main.replaceChildren(views.catalog)
-});
+document.getElementById('catalog-link').addEventListener('click', () => {
+    showCatalog();
+})
 
-document.getElementById('login-link').addEventListener('click', ()=>{
-    main.replaceChildren(views.login)
-});
-
-
-
+document.getElementById('login-link').addEventListener('click', () => {
+    showLogin();
+})

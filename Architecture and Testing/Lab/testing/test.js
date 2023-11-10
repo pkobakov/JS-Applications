@@ -1,6 +1,16 @@
 const { chromium } = require('playwright-chromium');
 const { expect } = require('chai');
 
+// test();
+
+// async function test (){
+//     const browser = await chromium.launch();
+//     const page = await browser.newPage();
+//     await page.goto('https://softuni.bg/');
+//     await page.screenshot({ path: `softuni.png` });
+//     await browser.close();
+// };
+
 
 let browser, page; // Declare reusable variables
 

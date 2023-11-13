@@ -1,6 +1,6 @@
 const login = document.getElementById('login-view');
-const main = document.getElementById('main');
 
-export function showLogin(){
-   main.replaceChildren(login);
+
+export function showLogin(context){
+   context.renderer(login);
 }

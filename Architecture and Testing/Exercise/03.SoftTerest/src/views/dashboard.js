@@ -1,6 +1,5 @@
 const dashboard = document.getElementById('dashboard-holder');
-const main = document.getElementById('main');
 
-export function showDashboard(){
-   main.replaceChildren(dashboard);
+export function showDashboard(context){
+   context.renderer(dashboard);
 }

@@ -5,8 +5,9 @@ import { showDashboard } from "./src/views/dashboard.js";
 import { showCreate } from "./src/views/create.js";
 
 document.getElementById('section').remove();
+document.querySelector('nav').addEventListener('click', onNavigate);
+const main = document.getElementById('main');
 
-document.querySelector('nav').addEventListener('click', onNavigate)
 
 const routes = {
     "/": showHome,
@@ -15,6 +16,10 @@ const routes = {
     "/register": showRegister,
     "/login": showLogin,
     "/logout": () => {console.log('Logout')},
+}
+
+function renderer(section){
+   main.replaceChildren(section);
 }
 
 function onNavigate(event){
@@ -30,6 +35,12 @@ function onNavigate(event){
         target = target.parentElement;
     }
 
+    const context = {
+        renderer
+    }
+
     const endpoint = new URL(target.href).pathname;
-    routes[endpoint]();
+    routes[endpoint](context);
+
+    debugger;
 }

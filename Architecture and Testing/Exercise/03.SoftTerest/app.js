@@ -3,6 +3,7 @@ import { showRegister } from "./src/views/register.js";
 import { showLogin } from "./src/views/login.js";
 import { showDashboard } from "./src/views/dashboard.js";
 import { showCreate } from "./src/views/create.js";
+import { showDetails } from "./src/views/details.js";
 
 document.getElementById('section').remove();
 document.querySelector('nav').addEventListener('click', onNavigate);
@@ -41,6 +42,4 @@ function onNavigate(event){
 
     const endpoint = new URL(target.href).pathname;
     routes[endpoint](context);
-
-    debugger;
 }

@@ -1,4 +1,4 @@
-const details = document.getElementById('home-view');
+const details = document.getElementById('details-view');
 
 
 export function showDetails(context){

@@ -4,7 +4,10 @@ const registerView = document.getElementById('register-view');
 const form = document.querySelector('form');
 form.addEventListener('submit', onSubmit);
 
-export function showRegister(context){
+let context = null;
+
+export function showRegister(ctx){
+  context = ctx;
   context.renderer(registerView);
 }
 
@@ -20,5 +23,5 @@ async function onSubmit(event){
 
   await register (email, password);
   form.reset();
-  debugger
+  context.goTo('/')
 }

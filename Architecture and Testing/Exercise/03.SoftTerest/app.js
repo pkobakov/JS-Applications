@@ -19,9 +19,17 @@ const routes = {
     "/logout": () => {console.log('Logout')},
 }
 
+const context = {
+    renderer, 
+    goTo
+}
+
 function renderer(section){
    main.replaceChildren(section);
 }
+
+
+
 
 function onNavigate(event){
     event.preventDefault();
@@ -35,11 +43,13 @@ function onNavigate(event){
     if (target.tagName === 'IMG') {
         target = target.parentElement;
     }
-
-    const context = {
-        renderer
-    }
+ 
 
     const endpoint = new URL(target.href).pathname;
-    routes[endpoint](context);
+    goTo(endpoint);
+}
+
+function goTo(name, ...params){
+   const handler = routes[name];
+   handler(context)
 }

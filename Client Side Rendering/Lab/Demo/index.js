@@ -12,5 +12,5 @@ function render(html, parentElement){
 const buttons = ['Home', 'About', 'Contacts'];
 
 const recipes = await getRecipes();
-
+debugger
 render(appTemplate(buttons, recipes), root)

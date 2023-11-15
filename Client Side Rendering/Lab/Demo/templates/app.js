@@ -1,9 +1,12 @@
 import { navbarTemplate } from "./navbar/navbar.js";
-export const appTemplate = (buttons) => {
+import { recipesTemplate } from "./recipes/recipesTemplate.js";
+
+export const appTemplate = (buttons, recipes ) => {
     return`
     <header>
     ${navbarTemplate(buttons)}
     </header>
     <main>
+    ${recipesTemplate(recipes)}
     </main>`;
 }

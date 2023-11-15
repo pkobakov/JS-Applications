@@ -1,3 +1,4 @@
+import { getRecipes } from "./api.js";
 import { appTemplate } from "./templates/app.js";
 
 const root = document.getElementById('root');
@@ -8,4 +9,8 @@ function render(html, parentElement){
     parentElement.replaceChildren(div);
 }
 
-render(appTemplate(['Home', 'About', 'Contacts']), root)
+const buttons = ['Home', 'About', 'Contacts'];
+
+const recipes = await getRecipes();
+
+render(appTemplate(buttons, recipes), root)

@@ -1,6 +1,7 @@
-import { buttonsTemplate } from "./buttons.js"
+import { buttonsTemplate } from "./buttons.js";
+import { buttons } from "../../services/navbar.js";
 
-export const navbarTemplate = (buttons) => {
+export const navbarTemplate = () => {
     return `
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">

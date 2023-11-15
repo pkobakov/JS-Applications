@@ -23,5 +23,6 @@ async function onSubmit(event) {
    }
 
    await login(email, password)
+   context.updateNav();
    context.goTo('/')
 }

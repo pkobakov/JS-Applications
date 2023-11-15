@@ -17,6 +17,7 @@ updateNav();
 const routes = {
     "/": showHome,
     "/dashboard": showDashboard,
+    "/details": showDetails,
     "/create": showCreate,
     "/register": showRegister,
     "/login": showLogin,
@@ -30,12 +31,15 @@ const routes = {
 const context = {
     renderer, 
     goTo, 
-    updateNav
+    updateNav, 
+    
 }
 
 function renderer(section){
    main.replaceChildren(section);
 }
+
+
 
 function updateNav(){
     const user = userInfo('get');
@@ -73,5 +77,5 @@ function onNavigate(event){
 
 function goTo(name, ...params){
    const handler = routes[name];
-   handler(context)
+   handler(context, params);
 }

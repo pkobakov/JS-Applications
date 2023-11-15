@@ -1,9 +1,10 @@
 import { getAllIdeas } from "../api/data.js";
 
 const dashboard = document.getElementById('dashboard-holder');
+let context = null;
 
-export async function showDashboard(context){
-   
+export async function showDashboard(ctx){
+   context = ctx;
    dashboard.innerHTML = '';
    const ideas = await getAllIdeas();
 
@@ -15,8 +16,16 @@ export async function showDashboard(context){
    ideas.forEach(idea => {
       dashboard.innerHTML += createIdea(idea)
    });
+   dashboard.querySelectorAll('a').forEach(a => a.addEventListener('click', getDetails));
    context.renderer(dashboard);
    
+}
+
+function getDetails(event){
+    event.preventDefault();  
+    const id = event.target.dataset.id
+    context.goTo('/details', id);
+
 }
 
 function createIdea (idea){
@@ -26,6 +35,6 @@ function createIdea (idea){
          <p class="card-text">${idea.title}</p>
       </div>
       <img class="card-image" src="${idea.img}" alt="Card image cap">
-      <a class="btn" href="/details/${idea._id}">Details</a>
+      <a class="btn" href="/details/" data-id="${idea._id}">Details</a>
    </div>`
 }

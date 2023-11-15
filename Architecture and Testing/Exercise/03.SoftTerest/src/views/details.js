@@ -1,4 +1,4 @@
-import { deleteIdea, getIdeaById } from "../api/data.js";
+import { getIdeaById, deleteIdea } from "../api/data.js";
 import { userInfo } from "../api/user_helper.js";
 
 const details = document.getElementById('details-view');
@@ -13,14 +13,12 @@ export async function showDetails(context, params){
 
    context.renderer(details);
 }
-
 details.querySelector('a').addEventListener('click', onDelete);
-debugger
-async function onDelete(context, params){
-   
-   return await deleteIdea(params[0]);
 
-
+export async function onDelete(event){
+   event.preventDefault();
+   debugger
+   const idea = await getIdeaById()
 }
 
 function createTemplate(idea, isOwner){

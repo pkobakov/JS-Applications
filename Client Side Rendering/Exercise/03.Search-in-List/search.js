@@ -1,31 +1,26 @@
-import { towns } from "./towns.js";
-import{html, render} from '../node_modules/lit-html/lit-html.js';
+import { render } from '../node_modules/lit-html/lit-html.js'
+import { template } from './template.js'
+import { towns } from './towns.js'
 
-const section = document.getElementById('towns');
-const searchBtn = document.querySelector('article button').addEventListener('click', search)
-searchTemplate(towns);
+render(template(towns), document.querySelector('body'))
 
-function searchTemplate(towns, matches){
-  const template = html`<ul>
-                           ${towns.map(town => createTemplate(town, matches))}
-                        </ul>`;
-   render(template, section)
-}
+document.addEventListener('click', e => {
+	if (e.target.tagName === 'BUTTON') {
+		const value = document.getElementById(`searchText`).value
+		const towns = [...document.getElementsByTagName('li')]
+		let counter = 0
 
-function createTemplate(data, match, i){
-   return html`<li id="${i}" class=${match?.includes(data) ? 'active' : ''}>${data}</li>`;
-};
+		towns.forEach(x => {
+			x.className = ''
+			if (x.innerText.toLocaleLowerCase().includes(value.toLocaleLowerCase())) {
+				x.className = 'active'
+				counter += 1
+			}
+		})
 
-function update(matches){
-   const matchesText = matches.length > 1 ? 'matches found' : 'match found';
-   const text = matches.length > 0 ? `${matches.length} ${matchesText}` : '';
-   document.getElementById('result').innerText = text;
-   searchTemplate(towns, matches);
-}
-
-function search(event){
-   const searchInput = document.getElementById('searchText');
-   const text = searchInput.value;
-   const match = towns.filter(town => town.includes(text));
-   update(match);
-}
+		document.getElementById('result').innerText =
+			counter !== 0
+				? `${counter} matches found`
+				: ''
+	}
+})

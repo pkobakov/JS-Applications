@@ -1,4 +1,4 @@
-import { html, render } from '../node_modules/lit-html/lit-html.js';
+import { html} from '../node_modules/lit-html/lit-html.js';
 
 const template = (towns) => html`
     <article>

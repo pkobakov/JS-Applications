@@ -1,6 +1,8 @@
 import { html, render } from "../../node_modules/lit-html/lit-html.js";
 import { userData } from "../user-data-helper.js";
 import page from '../../node_modules/page/page.mjs';
+import { updateNavbar } from "../app.js";
+import { post } from "../api.js";
 
 const root = document.querySelector('.container');
 
@@ -39,10 +41,17 @@ async function loginHandler(event){
    const formData = new FormData(event.target);
    const {email, password} = Object.fromEntries(formData);
 
-   post('users/login', {email, password});
-   userData.setUserData(data);
+   const data = post('users/login', {email, password});
+   //userData.setUserData(data);
 
-   page.redirect('/'); 
+   const user = userData.getUserData(data);
+
+   if (user) {
+       updateNavbar();
+       page.redirect('/'); 
+    
+   }
+   
 }
 
  

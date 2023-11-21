@@ -2,6 +2,7 @@ import { html, render } from '../../node_modules/lit-html/lit-html.js';
 import { post } from '../api.js';
 import { userData } from '../user-data-helper.js';
 import page from '../../node_modules/page/page.mjs';
+import { updateNavbar } from '../app.js';
 
 const root = document.querySelector('.container');
 
@@ -50,6 +51,7 @@ async function submitHandler(event){
 
     const data = await post ('users/register', {email, password});
     userData.setUserData(data);
-
-    page.redirect('/') 
+    
+    
+    page.redirect('/login') 
 }

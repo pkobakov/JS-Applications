@@ -15,7 +15,7 @@ async function requester(method, url, data){
     }
 
     const userInfo = userData.getUserData();
-
+    
     if (userInfo) {
         option.headers['X-Authorization'] = userInfo.accessToken; 
     }
@@ -47,7 +47,7 @@ export function post(url, data){
     return requester('post', url, data);
 }
 
-export function update (url, data){
+export function put(url, data){
     return requester('put', url, data)
 }
 

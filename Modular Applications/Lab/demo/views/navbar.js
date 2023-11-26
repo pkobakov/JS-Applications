@@ -15,6 +15,9 @@ function navbarTemplate(authState){
          ${authState 
         ? html`
         <li class="nav-item">
+           <a class="nav-link" href="/products/create">Create Product</a>
+        </li>
+        <li class="nav-item">
            <a class="nav-link" href="/logout">Logout</a>
         </li>`
         : html`

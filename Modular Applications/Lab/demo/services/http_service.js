@@ -2,8 +2,7 @@ export async function get(url){
     return await fetch(url, {
         method: 'get',
     })
-    .then((res) => 
-     res.json());
+    .then((res) => res.json());
 }
 
 export async function post(url, body, authToken){

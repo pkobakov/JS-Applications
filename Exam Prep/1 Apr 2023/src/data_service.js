@@ -3,6 +3,8 @@ import { api } from "./api.js"
 const dataEndpoints = {
     getAllFruits: 'data/fruits?sortBy=_createdOn%20desc',
     getSingleFruit: 'data/fruits/',
+
+
 }
 
 async function getAllFruits(){
@@ -25,10 +27,15 @@ async function deleteFruit(id){
     return api.del(dataEndpoints.getSingleFruit + id)
 }
 
+async function searchFruit(query){
+    return api.get(`data/fruits?where=name%20LIKE%20%22${query}%22`);
+} 
+
 export const dataService = {
     getAllFruits, 
     getFruit, 
     createFruit,
     updateFruit,
+    searchFruit,
     deleteFruit 
 }

@@ -3,7 +3,6 @@ function getUserData(){
 }
 
 function setUserData(userdata){
-    
     sessionStorage.setItem('userdata', JSON.stringify(userdata));
 }
 

@@ -19,7 +19,7 @@ const detailsTemplate = (album, isCreator) => html`
     <p><strong>Label:</strong><span id="details-label">${album.label}</span></p>
     <p><strong>Sales:</strong><span id="details-sales">${album.sales}</span></p>
   </div>
-
+  <div id="likes">Likes: <span id="likes-count"></span></div>
   ${isCreator ? html` 
     <div id="action-buttons">
         <a href="/edit/${album._id}" id="edit-btn">Edit</a>
@@ -45,6 +45,11 @@ async function deleteEvent(event) {
     event.preventDefault();
 
     const id = context.params.id;
-    await dataService.deleteAlbum(id);
-    context.goTo('/dashboard');
+
+    if (confirm('are you sure?')) {
+      await dataService.deleteAlbum(id);
+      context.goTo('/dashboard');
+      
+    }
 }
+

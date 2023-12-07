@@ -17,7 +17,6 @@ const searchTemplate = (data, isResult) => html `
     ${isResult && result(data)}
 </section>
 `
-debugger
 const result = (fruits) => html`
 <h4>Results:</h4>
 <div class="search-result">

@@ -11,7 +11,7 @@ async function getAllCharacters(){
 }
 
 async function addCharacter(data){
-    return api.post(dataEndoints.postCharacter, data);
+   return api.post(dataEndoints.postCharacter, data);
 }
 
 async function getSingleCharacter(id){
@@ -25,8 +25,6 @@ async function updateCharacter(id, data){
 async function deleteCharacter(id){
     return api.del(dataEndoints.getSingleCharacter + id);
 }
-
-
 
 export const dataService = {
    getAllCharacters,
